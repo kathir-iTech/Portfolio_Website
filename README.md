@@ -1,4 +1,3 @@
-
 # 💼 Personal Portfolio Website
 
 Welcome to the official GitHub repository of my **Portfolio Website**.  
@@ -10,23 +9,19 @@ I am **Kathirvel R**, a passionate student in Artificial Intelligence and Data S
 
 ## 🚀 Features
 
-- Smooth scroll animations (AOS)
-- Fully responsive design
-- Preloader effect
-- Clean and modern UI using Tailwind CSS
-- Hosted on GitHub Pages
+- ⚡ Smooth scroll animations (AOS)
+- 🌐 Fully responsive design
+- ⏳ Preloader effect
+- 🎨 Clean and modern UI using Tailwind CSS
+- 🚀 Hosted on GitHub Pages
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- Tailwind CSS
-- JavaScript
-- AOS.js (for scroll animations)
+- HTML5  
+- Tailwind CSS  
+- JavaScript  
+- AOS.js (for scroll animations)  
 - GitHub Pages (for hosting)
-
-## 📸 Preview
-
-![Portfolio Screenshot](./preview.png)
 
 ## 📄 License
 
