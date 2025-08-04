@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>KATHIRVEL R - AI&DS Student | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#10b981',
+                        'primary-hover': '#059669',
+                        'accent': '#34d399'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-900 text-slate-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Brand with Logo -->
+                <a href="#hero" class="flex items-center space-x-3">
+                    <img src="kathir.png" alt="Kathir Logo" class="h-10 w-10 rounded-full border border-emerald-400 shadow-sm" />
+                    <span class="text-2xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
+                        KATHIR iTECH
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#hero" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Hero</a></li>
+                    <li><a href="#about-me" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">About me</a></li>
+                    <li><a href="#my-projects" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">My Projects</a></li>
+                    <li><a href="#certifications" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Certifications</a></li>
+                    <li><a href="#badges" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Badges</a></li>
+                    <li><a href="#contact" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn">
+                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar1"></span>
+                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar2"></span>
+                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar3"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden bg-slate-800 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
+                <ul class="py-4 px-4 space-y-2">
+                    <li><a href="#hero" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Hero</a></li>
+                    <li><a href="#about-me" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">About me</a></li>
+                    <li><a href="#my-projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">My Projects</a></li>
+                    <li><a href="#certifications" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Certifications</a></li>
+                    <li><a href="#badges" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Badges</a></li>
+                    <li><a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg">
+        <div class="stars"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-7 text-white">KATHIRVEL R</h1>
+                <p class="text-2xl md:text-3xl mb-8 text-emerald-400 font-medium">AI&DS Student</p>
+                <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-slate-300 leading-relaxed">
+                    Passionate about solving real-world problems using AI and data
+                </p>
+                <a href="#contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About me Section -->
+    <section id="about-me" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in-up">
+                        <h2 class="text-4xl font-bold mb-8 text-emerald-400">About me</h2>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            I'm <strong>Kathirvel R</strong>, an undergraduate student at <strong>PSG Institute of Technology and Applied Research</strong>, specializing in <strong>Artificial Intelligence and Data Science</strong>. 
+                            I am deeply passionate about leveraging technology to drive innovation and solve complex real-world challenges. 
+                            With hands-on experience in <strong>Python programming</strong>, <strong>data analysis</strong>, and <strong>modern web development</strong>, I continuously strive to enhance my technical expertise and contribute to impactful projects. 
+                            My focus is on building intelligent solutions that blend data, design, and development into seamless digital experiences.
+                        </p>
+                    </div>
+                    <div class="fade-in-up">
+                        <div class="w-full h-64 bg-gradient-to-br from-emerald-500 to-slate-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-32 h-32 text-white opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z"/>
+                                <path d="M12 7L6.5 9.5V15c0 2.5 2.5 4.5 5.5 4.5s5.5-2 5.5-4.5V9.5L12 7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Projects Section -->
+    <section id="my-projects" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-400 mb-4">My Projects</h2>
+                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+                <!-- Project 1: Scientific Computing with Python -->
+                <a href="https://www.freecodecamp.org/certification/kathir-iTech/scientific-computing-with-python-v7"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
+                             alt="freeCodeCamp"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            My Projects
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Scientific Computing with Python - Project
+                    </h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-400 mb-4">Certifications</h2>
+                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Course 1 -->
+                <a href="https://coursera.org/share/72e4740f45e0385ee79527f031e02804"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Foundations: Data, Data, Everywhere
+                    </h3>
+                </a>
+
+                <!-- Course 2 -->
+                <a href="https://coursera.org/share/b76423ed117c848269ac0a07c8711ea5"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Ask Questions to Make Data-Driven Decisions
+                    </h3>
+                </a>
+
+                <!-- Course 3 -->
+                <a href="https://coursera.org/share/1135500b6b90afed32c72e82792ca790"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Prepare Data for Exploration
+                    </h3>
+                </a>
+
+                <!-- Course 4 -->
+                <a href="https://coursera.org/share/4d9372cda97b8d7a73f5393b2dff89f1"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Process Data from Dirty to Clean
+                    </h3>
+                </a>
+
+                <!-- Course 5 -->
+                <a href="https://coursera.org/share/67ec5230495c852f06849e65df97ebb9"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Analyze Data to Answer Questions
+                    </h3>
+                </a>
+
+                <!-- Course 6 -->
+                <a href="https://coursera.org/share/44b25680eb4b3a33163649966c318280"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Share Data Through the Art of Visualization
+                    </h3>
+                </a>
+
+                <!-- Course 7 -->
+                <a href="https://coursera.org/share/f0ca45888203e613001f5072d8d8bcd6"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Data Analysis with R Programming
+                    </h3>
+                </a>
+
+                <!-- Course 8 -->
+                <a href="https://coursera.org/share/3c7ab38b100906be595aa65e32b6a05e"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
+                             alt="Coursera"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Coursera
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Google Data Analytics Capstone
+                    </h3>
+                </a>
+
+                <!-- freeCodeCamp Certification -->
+                <a href="https://www.freecodecamp.org/certification/kathir-iTech/scientific-computing-with-python-v7"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
+                             alt="freeCodeCamp"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            FreeCodeCamp
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Scientific Computing with Python
+                    </h3>
+                </a>
+
+                <!-- HackerRank Python Basic -->
+                <a href="https://www.hackerrank.com/certificates/iframe/9d0fe7b7e12c"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg"
+                             alt="HackerRank"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            HackerRank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Python (Basic)
+                    </h3>
+                </a>
+
+                <!-- HackerRank Problem Solving Intermediate -->
+                <a href="https://www.hackerrank.com/certificates/iframe/f2dfa9a3e089"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg"
+                             alt="HackerRank"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            HackerRank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Problem Solving (Intermediate)
+                    </h3>
+                </a>
+
+                <!-- HackerRank SQL Basic -->
+                <a href="https://www.hackerrank.com/certificates/iframe/f68a7b37efd0"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg"
+                             alt="HackerRank"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            HackerRank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        SQL (Basic)
+                    </h3>
+                </a>
+
+                <!-- HackerRank SQL Intermediate -->
+                <a href="https://www.hackerrank.com/certificates/iframe/69e84843a013"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg"
+                             alt="HackerRank"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            HackerRank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        SQL (Intermediate)
+                    </h3>
+                </a>
+
+                <!-- HackerRank SQL Advanced -->
+                <a href="https://www.hackerrank.com/certificates/iframe/6c90302c9925"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg"
+                             alt="HackerRank"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            HackerRank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        SQL (Advanced)
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badges Section -->
+    <section id="badges" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-400 mb-4">Badges</h2>
+                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+                <!-- Badge 1: FreeCodeCamp -->
+                <a href="https://www.hackerrank.com/kathir_3447"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
+                             alt="freeCodeCamp"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            FreeCodeCamp
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Earned by solving 115 Python problems (Rank - 1)
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 1 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/9YDALZCU?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Introduction to Machine Learning
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 2 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/VJNGCUPM?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Azure Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 3 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/VJNG9XTM?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Power Platform Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 4 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/FM6KSV7X?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        AI Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 5 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/URJVKKP3?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Data Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 6 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/3ATQEL3H?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Security Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 7 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/YE9LD39R?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Microsoft 365 Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 8 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/7KHC566Z?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Dynamics 365 Fundamentals
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 9 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/URJ4QXV3?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Power BI Data Analyst
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 10 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/9YDPMK5U?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Azure AI Engineer
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 11 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/3ATK4YQH?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Azure Developer
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 12 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/URJ4PD93?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Azure Solutions Architect
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 13 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/K67XAGVB?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        DevOps Engineer Expert
+                    </h3>
+                </a>
+
+                <!-- Microsoft Learn Badge 14 -->
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/KathiriTECH-5831/PLRNY724?sharingId=433A338E14839965"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/microsoft.png"
+                             alt="Microsoft Learn"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                            Microsoft Learn
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
+                        Azure Security Engineer
+                    </h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-400 mb-4">Contact</h2>
+                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+            </div>
+            <div class="max-w-2xl mx-auto flex flex-wrap justify-center gap-8">
+                <!-- GitHub -->
+                <a href="https://github.com/kathir-iTech" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center space-x-3 group transition hover:text-emerald-400">
+                    <svg class="w-8 h-8 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 0.5C5.65 0.5.5 5.68.5 12.09c0 5.13 3.3 9.47 7.88 11.01.58.11.79-.26.79-.57v-2.08c-3.2.71-3.87-1.38-3.87-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.8 2.7 1.28 3.36.98.1-.75.4-1.28.73-1.57-2.56-.3-5.26-1.3-5.26-5.77 0-1.28.46-2.32 1.2-3.14-.12-.3-.52-1.5.12-3.13 0 0 .98-.32 3.2 1.2a10.93 10.93 0 0 1 2.91-.39c.99 0 1.99.13 2.91.39 2.22-1.52 3.2-1.2 3.2-1.2.64 1.63.24 2.83.12 3.13.75.82 1.2 1.86 1.2 3.14 0 4.49-2.7 5.47-5.28 5.76.42.36.78 1.08.78 2.19v3.25c0 .32.2.69.8.57A11.59 11.59 0 0 0 23.5 12.1C23.5 5.68 18.35.5 12 .5z"/>
+                    </svg>
+                    <span class="text-lg font-semibold">GitHub</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:kathir.3447@gmail.com"
+                   class="flex items-center space-x-3 group transition hover:text-emerald-400">
+                    <svg class="w-8 h-8 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+                    </svg>
+                    <span class="text-lg font-semibold">Email</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 py-6 border-t border-slate-700">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm sm:text-base font-medium">
+                &copy; 2025 <span class="text-emerald-400 font-semibold">Kathirvel R.</span> All rights reserved. <br class="sm:hidden" />
+                <span class="text-slate-400 italic">Unauthorized reproduction is prohibited.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
