@@ -1,7 +1,7 @@
 # 💼 Personal Portfolio Website
 
 Welcome to the official GitHub repository of my **Portfolio Website**.  
-I am **Kathirvel R**, a passionate student in Artificial Intelligence and Data Science (AIDS) at PSG iTech.
+I am **Kathirvel R**, a passionate student in Artificial Intelligence and Data Science (AI&DS) at PSG iTech.
 
 ## 🌐 Live Demo
 
