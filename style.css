@@ -133,6 +133,10 @@
 }
 
 /* Navigation link hover effect */
+.nav-link {
+    position: relative;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -161,52 +165,26 @@
     border-color: rgba(16, 185, 129, 0.3);
 }
 
-.cert-link {
+.certification-card a, .certification-card a:visited {
     text-decoration: none;
-    display: block;
-}
-
-.cert-link h3 {
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.cert-link:hover h3 {
-    transform: translateX(5px);
-}
-
-.cert-link h3::after {
-    content: '↗';
-    position: absolute;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    color: #10b981;
-    font-size: 0.9em;
-}
-
-.cert-link:hover h3::after {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .provider-badge {
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
 }
 
-/* Tool chips styling */
+/* Tool chip styling */
 .tool-chip {
     background: rgba(100, 116, 139, 0.1);
     border: 1px solid rgba(100, 116, 139, 0.3);
     color: #cbd5e1;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     font-weight: 500;
     text-align: center;
     transition: all 0.3s ease;
@@ -218,18 +196,18 @@
     border-color: rgba(100, 116, 139, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(100, 116, 139, 0.2);
-    color: white;
+    color: #fff;
 }
 
-/* Contact buttons */
+/* Contact button styling */
 .contact-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.3);
-    border-radius: 12px;
+    border-radius: 0.75rem;
     color: #10b981;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -241,14 +219,14 @@
     border-color: rgba(16, 185, 129, 0.5);
     transform: translateY(-3px);
     box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
-    color: #34d399;
+    color: #22c55e;
 }
 
 /* Fade in animations */
 .fade-in-up {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in-up.visible {
@@ -256,9 +234,11 @@
     transform: translateY(0);
 }
 
-/* Mobile menu animations */
+/* Mobile menu */
 #mobile-menu {
     transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
 }
 
@@ -267,21 +247,20 @@
     opacity: 1;
 }
 
-/* Mobile hamburger menu animation */
+/* Hamburger icon animation */
 #mobile-menu-btn.active #bar1 {
     transform: rotate(45deg) translate(5px, 5px);
 }
-
 #mobile-menu-btn.active #bar2 {
     opacity: 0;
 }
-
 #mobile-menu-btn.active #bar3 {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
+    /* Adjust stars for smaller viewports for performance */
     .stars::before,
     .stars::after {
         box-shadow: 
@@ -291,14 +270,7 @@
             180px 80px white,
             240px 30px white,
             300px 90px white,
-            360px 50px white,
-            50px 150px white,
-            150px 200px white,
-            250px 180px white,
-            350px 220px white,
-            80px 300px white,
-            180px 350px white,
-            280px 320px white;
+            360px 40px white;
     }
 
     .certification-card {
@@ -308,42 +280,70 @@
 
 @media (max-width: 480px) {
     .tool-chip {
-        padding: 10px 16px;
-        font-size: 14px;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
     }
-    
+
     .contact-btn {
-        padding: 16px;
+        padding: 1rem;
     }
 
     .certification-card {
         padding: 1rem;
     }
 
-    .cert-link h3 {
-        font-size: 1.1rem;
+    .certification-card h3 {
+        font-size: 1.125rem;
     }
 }
 
-/* Green glowing effect for FreeCodeCamp project card */
+/* ----------------------------- */
+/* Green glowing effect for FreeCodeCamp cards */
 .freecodecamp-glow {
-  box-shadow: 0 0 15px 5px #34d399, 0 0 30px 10px rgba(52, 211, 153, 0.6);
-  border: 2px solid #34d399; /* Bright green border */
+  box-shadow: 0 0 15px 5px #22c55e, 0 0 30px 10px rgba(34, 197, 94, 0.6);
+  border: 2px solid #22c55e;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Optional pulsing animation for a dynamic glow */
+/* Pulse animation */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 15px 5px #34d399, 0 0 30px 10px rgba(52, 211, 153, 0.6);
-    border-color: #34d399;
+    box-shadow: 0 0 15px 5px #22c55e, 0 0 30px 10px rgba(34, 197, 94, 0.6);
+    border-color: #22c55e;
   }
   50% {
-    box-shadow: 0 0 25px 10px #34d399, 0 0 50px 20px rgba(52, 211, 153, 0.8);
-    border-color: #86efac;
+    box-shadow: 0 0 25px 10px #84e986, 0 0 50px 20px rgba(132, 233, 134, 0.8);
+    border-color: #84e986;
   }
 }
 
 .freecodecamp-glow.pulse {
   animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* ----------------------------- */
+/* White glowing effect for "KATHIRVEL" name */
+
+.name-glow {
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
+  animation: pulse-white-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-white-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.8),
+      0 0 15px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 1),
+      0 0 24px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6);
+  }
 }
