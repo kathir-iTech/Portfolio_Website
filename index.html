@@ -20,6 +20,42 @@
             }
         }
     </script>
+    <style>
+        /* White glow for section headings */
+        .white-glow {
+            color: white;
+            text-shadow:
+                0 0 5px rgba(255, 255, 255, 0.8),
+                0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Enhanced hero name glow */
+        .name-glow {
+            color: white;
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(255, 255, 255, 0.7),
+                0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Brand glow effect */
+        .brand-glow {
+            color: #10b981;
+            text-shadow:
+                0 0 5px rgba(16, 185, 129, 0.8),
+                0 0 10px rgba(16, 185, 129, 0.6),
+                0 0 15px rgba(16, 185, 129, 0.4);
+            transition: text-shadow 0.3s, color 0.3s;
+        }
+        .brand-glow:hover {
+            color: #059669;
+            text-shadow:
+                0 0 8px rgba(5, 150, 105, 0.9),
+                0 0 15px rgba(5, 150, 105, 0.7),
+                0 0 20px rgba(5, 150, 105, 0.5);
+        }
+    </style>
 </head>
 
 <body class="bg-slate-900 text-slate-100">
@@ -30,9 +66,7 @@
                 <!-- Brand with Logo -->
                 <a href="#hero" class="flex items-center space-x-3">
                     <img src="kathir.png" alt="Kathir Logo" class="h-10 w-10 rounded-full border border-emerald-400 shadow-sm" />
-                    <span class="text-2xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-                        KATHIR iTECH
-                    </span>
+                    <span class="text-2xl font-bold brand-glow">KATHIR iTECH</span>
                 </a>
 
                 <!-- Desktop Menu -->
@@ -56,12 +90,12 @@
             <!-- Mobile Menu -->
             <div class="md:hidden bg-slate-800 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
                 <ul class="py-4 px-4 space-y-2">
-                    <li><a href="#hero" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Hero</a></li>
-                    <li><a href="#about-me" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">About me</a></li>
-                    <li><a href="#my-projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">My Projects</a></li>
-                    <li><a href="#certifications" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Certifications</a></li>
-                    <li><a href="#badges" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Badges</a></li>
-                    <li><a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 transition-colors">Contact</a></li>
+                    <li><a href="#hero" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Hero</a></li>
+                    <li><a href="#about-me" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">About me</a></li>
+                    <li><a href="#my-projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">My Projects</a></li>
+                    <li><a href="#certifications" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Certifications</a></li>
+                    <li><a href="#badges" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Badges</a></li>
+                    <li><a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -73,7 +107,6 @@
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="fade-in-up">
                 <h1 class="text-5xl md:text-7xl font-bold mb-7 name-glow">KATHIRVEL R</h1>
-
                 <p class="text-2xl md:text-3xl mb-8 text-emerald-400 font-medium">AI&DS Student</p>
                 <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-slate-300 leading-relaxed">
                     Passionate about solving real-world problems using AI and data
@@ -91,7 +124,8 @@
             <div class="max-w-4xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="fade-in-up">
-                        <h2 class="text-4xl font-bold mb-8 text-emerald-400">About me</h2>
+                        <h2 class="text-4xl font-bold white-glow mb-4">About me</h2>
+                        <div class="w-20 h-1 bg-white mx-auto md:mx-0 mb-8"></div>
                         <p class="text-lg text-slate-300 leading-relaxed">
                             I'm <strong>Kathirvel R</strong>, an undergraduate student at <strong>PSG Institute of Technology and Applied Research</strong>, specializing in <strong>Artificial Intelligence and Data Science</strong>. 
                             I am deeply passionate about leveraging technology to drive innovation and solve complex real-world challenges. 
@@ -116,45 +150,14 @@
     <section id="my-projects" class="py-20 bg-slate-900">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-emerald-400 mb-4">My Projects</h2>
-                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+                <h2 class="text-4xl font-bold white-glow mb-4">My Projects</h2>
+                <div class="w-20 h-1 bg-white mx-auto rounded"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
-                <!-- Project 1: Scientific Computing with Python (GREEN GLOW) -->
+                <!-- FreeCodeCamp Project Card -->
                 <a href="https://www.freecodecamp.org/certification/kathir-iTech/scientific-computing-with-python-v7"
                    target="_blank" rel="noopener noreferrer"
-                   class="certification-card freecodecamp-glow pulse bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
-                    <div class="flex items-center mb-4">
-                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
-                             alt="freeCodeCamp"
-                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
-                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
-                            My Projects
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
-                        Scientific Computing with Python - Project
-                    </h3>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-slate-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-emerald-400 mb-4">Certifications</h2>
-                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
-                <!-- freeCodeCamp Certification (GREEN GLOW) -->
-                <a href="https://www.freecodecamp.org/certification/kathir-iTech/scientific-computing-with-python-v7"
-                   target="_blank" rel="noopener noreferrer"
-                   class="certification-card freecodecamp-glow pulse bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-emerald-400 transition cursor-pointer">
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-white transition cursor-pointer">
                     <div class="flex items-center mb-4">
                         <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
                              alt="freeCodeCamp"
@@ -163,9 +166,33 @@
                             FreeCodeCamp
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white hover:text-emerald-400 transition-colors duration-300">
-                        Scientific Computing with Python
-                    </h3>
+                    <h3 class="text-xl font-bold white-glow">FreeCodeCamp</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold white-glow mb-4">Certifications</h2>
+                <div class="w-20 h-1 bg-white mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- FreeCodeCamp Certification Card -->
+                <a href="https://www.freecodecamp.org/certification/kathir-iTech/scientific-computing-with-python-v7"
+                   target="_blank" rel="noopener noreferrer"
+                   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-white transition cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/freecodecamp.svg"
+                             alt="freeCodeCamp"
+                             class="w-12 h-12 bg-white rounded-lg p-2 mr-4 shadow-md" />
+                        <div class="provider-badge bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                            FreeCodeCamp
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold white-glow">Scientific Computing with Python</h3>
                 </a>
                 <!-- Course 1 -->
                 <a href="https://coursera.org/share/72e4740f45e0385ee79527f031e02804"
@@ -397,8 +424,8 @@
     <section id="badges" class="py-20 bg-slate-900">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-emerald-400 mb-4">Badges</h2>
-                <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
+                <h2 class="text-4xl font-bold white-glow mb-4">Badges</h2>
+                <div class="w-20 h-1 bg-white mx-auto rounded"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
@@ -630,14 +657,14 @@
         </div>
     </section>
 
-  <!-- Contact Section -->
-<section id="contact" class="py-20 bg-slate-900">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-emerald-400 mb-4">Contact</h2>
-      <div class="w-20 h-1 bg-emerald-400 mx-auto"></div>
-    </div>
-    <div class="max-w-2xl mx-auto flex flex-wrap justify-center gap-8">
+ <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold white-glow mb-4">Contact</h2>
+                <div class="w-20 h-1 bg-white mx-auto rounded"></div>
+            </div>
+            <div class="max-w-2xl mx-auto flex flex-wrap justify-center gap-8">
       
       <!-- GitHub -->
       <a href="https://github.com/kathir-iTech" target="_blank" rel="noopener noreferrer"
