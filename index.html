@@ -22,12 +22,30 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
+<style>
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+</style>
+
 </head>
 <body class="bg-white text-gray-900">
   <div class="particle-network"></div>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur shadow-md transition-all duration-300" id="navbar">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
         <!-- Brand with Logo -->
@@ -38,13 +56,14 @@
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-8">
-          <li><a href="#hero" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Hero</a></li>
-          <li><a href="#about-me" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">About me</a></li>
-          <li><a href="#my-projects" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">My Projects</a></li>
-          <li><a href="#certifications" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Certifications</a></li>
-          <li><a href="#badges" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Badges</a></li>
-          <li><a href="#contact" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Contact</a></li>
-        </ul>
+  <li><a href="#hero" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Hero</a></li>
+  <li><a href="#about-me" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">About me</a></li>
+  <li><a href="#my-projects" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">My Projects</a></li>
+  <li><a href="#certifications" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Certifications</a></li>
+  <li><a href="#badges" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Badges</a></li>
+  <li><a href="#contact" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Contact</a></li>
+</ul>
+
 
         <!-- Mobile Menu Button -->
         <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn" aria-label="Toggle menu">
@@ -57,19 +76,20 @@
       <!-- Mobile Menu -->
       <div class="md:hidden bg-gray-100 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
         <ul class="py-4 px-4 space-y-2">
-          <li><a href="#hero" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Hero</a></li>
-          <li><a href="#about-me" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">About me</a></li>
-          <li><a href="#my-projects" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">My Projects</a></li>
-          <li><a href="#certifications" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Certifications</a></li>
-          <li><a href="#badges" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Badges</a></li>
-          <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Contact</a></li>
-        </ul>
+  <li><a href="#hero" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Hero</a></li>
+  <li><a href="#about-me" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">About me</a></li>
+  <li><a href="#my-projects" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">My Projects</a></li>
+  <li><a href="#certifications" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Certifications</a></li>
+  <li><a href="#badges" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Badges</a></li>
+  <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Contact</a></li>
+</ul>
+
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg">
+  <section id="hero" class="min-h-screen pt-24 flex items-center justify-center relative overflow-hidden hero-bg">
     <!-- Particle network background -->
     <div class="particle-network"></div>
 
@@ -154,8 +174,11 @@
         
         <!-- Course 0 -->
         <a href="https://coursera.org/share/62793baec9036ec1d523f52099c073bc"
-           target="_blank" rel="noopener noreferrer"
-           class="certification-card coursera-glow pulse bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block hover:ring-2 hover:ring-blue-400 transition cursor-pointer">
+   target="_blank" rel="noopener noreferrer"
+   class="certification-card bg-slate-800 p-6 rounded-lg shadow-lg fade-in-up block transition cursor-pointer 
+          ring-2 ring-blue-500 hover:ring-4 hover:ring-blue-400 
+          animate-glow">
+
          <div class="flex items-center mb-4">
            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg"
                 alt="Coursera"
