@@ -1,46 +1,17 @@
-/* Hero background with light gradient */
+/* White theme main styles */
+body {
+  background: #ffffff;
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 .hero-bg {
   background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Animated stars - keep white for visibility */
-.stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.stars:before,
-.stars:after {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  box-shadow:
-    20px 30px white, 40px 70px white, 90px 40px white, 130px 80px white,
-    160px 30px white, 200px 90px white, 240px 50px white, 280px 120px white,
-    320px 80px white, 360px 40px white, 400px 110px white, 440px 70px white,
-    480px 30px white, 520px 90px white, 560px 50px white, 600px 80px white,
-    640px 110px white, 680px 40px white, 720px 70px white, 760px 100px white,
-    800px 60px white, 840px 30px white, 880px 80px white, 920px 50px white,
-    960px 90px white, 1000px 40px white, 1040px 70px white, 1080px 100px white,
-    1120px 30px white, 1160px 60px white, 1200px 90px white, 1240px 50px white,
-    1280px 80px white, 1320px 110px white, 1360px 40px white, 1400px 70px white,
-    50px 150px white, 100px 200px white, 150px 180px white, 200px 220px white,
-    250px 190px white, 300px 240px white, 350px 200px white, 400px 260px white,
-    450px 210px white, 500px 180px white, 550px 220px white, 600px 190px white,
-    650px 240px white, 700px 200px white, 750px 180px white, 800px 220px white,
-    850px 190px white, 900px 240px white;
-}
-.stars:after {
-  animation-delay: 1.5s;
-}
-
-/* Navbar background and shadows for light theme */
+/* Navigation bar light theme */
 .navbar {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
@@ -49,79 +20,69 @@
 }
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
-/* Navigation links hover underline color */
-.nav-link {
-  position: relative;
-  color: #4b5563; /* text-gray-700 */
+.nav-link, .mobile-nav-link {
+  color: #4b5563;
   transition: color 0.3s ease;
 }
-.nav-link:hover {
-  color: #10b981; /* emerald green */
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 50%;
-  background: #10b981;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover, .mobile-nav-link:hover {
+  color: #10b981;
 }
 
-/* Certification card with light background, border, and subtle hover glow */
+/* Name glow disable dark glow */
+.name-glow {
+  color: #111827;
+  text-shadow: none;
+  animation: none;
+}
+
+/* Certification cards */
 .certification-card {
-  transition: all 0.3s ease;
-  background-color: #f9fafb; /* light gray */
+  background-color: #f9fafb;
   border: 1px solid rgba(100, 116, 139, 0.4);
-  color: #111827; /* gray-900 */
+  color: #111827;
   border-radius: 0.5rem;
-  box-shadow: none;
+  transition: all 0.3s ease;
 }
 .certification-card:hover {
   box-shadow: 0 10px 25px rgba(5, 150, 105, 0.15);
   border-color: rgba(5, 150, 105, 0.3);
 }
 
-/* Tool chip styling with light background and border */
+/* Tool chips */
 .tool-chip {
   background: rgba(100, 116, 139, 0.05);
   border: 1px solid rgba(100, 116, 139, 0.2);
-  color: #374151; /* gray-700 */
+  color: #374151;
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   font-weight: 500;
-  text-align: center;
   cursor: default;
+  text-align: center;
   transition: all 0.3s ease;
 }
 .tool-chip:hover {
   background: rgba(100, 116, 139, 0.1);
   border-color: rgba(100, 116, 139, 0.4);
-  color: #111827; /* gray-900 */
-  transform: translateY(-2px);
+  color: #111827;
   box-shadow: 0 4px 8px rgba(100, 116, 139, 0.2);
+  transform: translateY(-2px);
 }
 
-/* Contact button styling light theme */
+/* Contact button */
 .contact-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.25rem;
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 0.75rem;
   color: #10b981;
+  padding: 1.25rem;
   font-weight: 600;
+  border-radius: 0.75rem;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 .contact-btn:hover {
@@ -132,19 +93,7 @@
   transform: translateY(-3px);
 }
 
-/* Remove dark glows from name and headings, use subtle dark text shadows */
-.name-glow {
-  color: #111827; /* gray-900 */
-  text-shadow: none;
-  animation: none;
-}
-
-.white-glow {
-  color: #1f2937; /* gray-800 */
-  text-shadow: none;
-}
-
-/* Fade in animations */
+/* Fade in animation */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -155,23 +104,33 @@
   transform: translateY(0);
 }
 
-/* Responsive and mobile menu styles can remain mostly unchanged, just update colors */
+/* Particle network container */
+.particle-network {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-color: transparent;
+}
 
+/* Mobile menu and hamburger bars */
+#mobile-menu-btn span {
+  background-color: #4b5563;
+}
 .mobile-nav-link {
-  color: #4b5563; /* gray-700 */
+  color: #4b5563;
 }
 .mobile-nav-link:hover {
   color: #10b981;
 }
 
-/* Hamburger menu bars for light theme */
-#mobile-menu-btn span {
-  background-color: #4b5563; /* gray-700 */
-}
-
-/* Adjust footer to light theme */
+/* Footer styles */
 footer {
   background-color: #f9fafb;
   color: #4b5563;
   border-top: 1px solid #d1d5db;
+  font-size: 0.875rem;
 }
+
