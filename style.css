@@ -47,6 +47,20 @@ body {
   animation: none;
 }
 
+.certification-card, .project-card {
+  background: #f5f5f5;              /* Very light gray */
+  color: #18181b;                   /* Nearly black text */
+  box-shadow: 0 2px 8px 0 rgba(40,60,100,0.08);
+  border: 1px solid #e2e8f0;
+}
+/* For extra emphasis on FreeCodeCamp label: */
+.project-card .tool-chip {
+  background: #e2ffe3;              /* Light green for FreeCodeCamp */
+  color: #089101;
+  font-weight: 700;
+}
+
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -55,6 +69,14 @@ body {
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.contact-btn,
+.contact-info,
+.contact-btn svg,
+.contact-info a {
+  color: #18181b !important;    /* Makes icons and names black */
+  fill: #18181b !important;     /* Ensures SVG icons are also black */
+  font-weight: 700;
 }
 
 footer {
