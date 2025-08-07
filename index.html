@@ -1,151 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>KATHIRVEL R - AI&DS Student | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#10b981',
-                        'primary-hover': '#059669',
-                        'accent': '#34d399'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* White glow for section headings */
-        .white-glow {
-            color: white;
-            text-shadow:
-                0 0 5px rgba(255, 255, 255, 0.8),
-                0 0 10px rgba(255, 255, 255, 0.6),
-                0 0 15px rgba(255, 255, 255, 0.4);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>KATHIRVEL R - Work-Folio</title>
 
-        /* Enhanced hero name glow */
-        .name-glow {
-            color: white;
-            text-shadow:
-                0 0 10px rgba(255, 255, 255, 0.9),
-                0 0 20px rgba(255, 255, 255, 0.7),
-                0 0 30px rgba(255, 255, 255, 0.5);
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981',
+            'primary-hover': '#059669',
+            accent: '#34d399',
+          },
+        },
+      },
+    };
+  </script>
 
-        /* Brand glow effect */
-        .brand-glow {
-            color: #10b981;
-            text-shadow:
-                0 0 5px rgba(16, 185, 129, 0.8),
-                0 0 10px rgba(16, 185, 129, 0.6),
-                0 0 15px rgba(16, 185, 129, 0.4);
-            transition: text-shadow 0.3s, color 0.3s;
-        }
-        .brand-glow:hover {
-            color: #059669;
-            text-shadow:
-                0 0 8px rgba(5, 150, 105, 0.9),
-                0 0 15px rgba(5, 150, 105, 0.7),
-                0 0 20px rgba(5, 150, 105, 0.5);
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="bg-white text-gray-900">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
-                <!-- Brand with Logo -->
-                <a href="#hero" class="flex items-center space-x-3">
-                    <img src="kathir.png" alt="Kathir Logo" class="h-10 w-10 rounded-full border border-emerald-400 shadow-sm" />
-                    <span class="text-2xl font-bold brand-glow">KATHIR iTECH</span>
-                </a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between py-4">
+        <!-- Brand with Logo -->
+        <a href="#hero" class="flex items-center space-x-3">
+          <img src="kathir.png" alt="Kathir Logo" class="h-10 w-10 rounded-full border border-emerald-400 shadow-sm" />
+          <span class="text-2xl font-bold brand-glow">KATHIR iTECH</span>
+        </a>
 
-                <!-- Desktop Menu -->
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#hero" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Hero</a></li>
-                    <li><a href="#about-me" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">About me</a></li>
-                    <li><a href="#my-projects" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">My Projects</a></li>
-                    <li><a href="#certifications" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Certifications</a></li>
-                    <li><a href="#badges" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Badges</a></li>
-                    <li><a href="#contact" class="nav-link text-slate-300 hover:text-emerald-400 transition-colors py-2 relative">Contact</a></li>
-                </ul>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="#hero" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Hero</a></li>
+          <li><a href="#about-me" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">About me</a></li>
+          <li><a href="#my-projects" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">My Projects</a></li>
+          <li><a href="#certifications" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Certifications</a></li>
+          <li><a href="#badges" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Badges</a></li>
+          <li><a href="#contact" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative">Contact</a></li>
+        </ul>
 
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn">
-                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar1"></span>
-                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar2"></span>
-                    <span class="w-6 h-0.5 bg-slate-300 transition-all duration-300" id="bar3"></span>
-                </button>
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar1"></span>
+          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar2"></span>
+          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden bg-gray-100 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
+        <ul class="py-4 px-4 space-y-2">
+          <li><a href="#hero" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Hero</a></li>
+          <li><a href="#about-me" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">About me</a></li>
+          <li><a href="#my-projects" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">My Projects</a></li>
+          <li><a href="#certifications" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Certifications</a></li>
+          <li><a href="#badges" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Badges</a></li>
+          <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg">
+    <div class="stars"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class="fade-in-up">
+        <h1 class="text-5xl md:text-7xl font-bold mb-7 name-glow">KATHIRVEL R</h1>
+        <p class="text-2xl md:text-3xl mb-8 text-emerald-400 font-medium">AIDS Student</p>
+        <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-700 leading-relaxed">
+          Passionate about solving real-world problems using AI and data.
+        </p>
+        <a href="#contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About me Section -->
+  <section id="about-me" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in-up">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">About me</h2>
+            <div class="w-20 h-1 bg-gray-900 mx-auto md:mx-0 mb-8"></div>
+            <p class="text-lg text-gray-800 leading-relaxed">
+              I'm strong <strong>Kathirvel R</strong>, an undergraduate student at <strong>PSG Institute of Technology and Applied Research</strong>, specializing in <strong>Artificial Intelligence and Data Science</strong>. I am deeply passionate about leveraging technology to drive innovation and solve complex real-world challenges. With hands-on experience in <strong>Python programming</strong>, <strong>data analysis</strong>, and <strong>modern web development</strong>, I continuously strive to enhance my technical expertise and contribute to impactful projects. My focus is on building intelligent solutions that blend data, design, and development into seamless digital experiences.
+            </p>
+          </div>
+          <div class="fade-in-up">
+            <!-- Placeholder or image section -->
+            <div class="w-full h-64 bg-gradient-to-br from-emerald-300 to-gray-200 rounded-lg flex items-center justify-center">
+              <!-- You can add an image or illustration here -->
+              <svg class="w-32 h-32 text-gray-400 opacity-30 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z" />
+                <path d="M12 7L6.5 9.5V15c0 2.5 2.5 4.5 5.5 4.5s5.5-2 5.5-4.5V9.5L12 7z" />
+              </svg>
             </div>
-
-            <!-- Mobile Menu -->
-            <div class="md:hidden bg-slate-800 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
-                <ul class="py-4 px-4 space-y-2">
-                    <li><a href="#hero" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Hero</a></li>
-                    <li><a href="#about-me" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">About me</a></li>
-                    <li><a href="#my-projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">My Projects</a></li>
-                    <li><a href="#certifications" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Certifications</a></li>
-                    <li><a href="#badges" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Badges</a></li>
-                    <li><a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400">Contact</a></li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg">
-        <div class="stars"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="fade-in-up">
-                <h1 class="text-5xl md:text-7xl font-bold mb-7 name-glow">KATHIRVEL R</h1>
-                <p class="text-2xl md:text-3xl mb-8 text-emerald-400 font-medium">AI&DS Student</p>
-                <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-slate-300 leading-relaxed">
-                    Passionate about solving real-world problems using AI and data
-                </p>
-                <a href="#contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                    Get In Touch
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About me Section -->
-    <section id="about-me" class="py-20 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in-up">
-                        <h2 class="text-4xl font-bold white-glow mb-4">About me</h2>
-                        <div class="w-20 h-1 bg-white mx-auto md:mx-0 mb-8"></div>
-                        <p class="text-lg text-slate-300 leading-relaxed">
-                            I'm <strong>Kathirvel R</strong>, an undergraduate student at <strong>PSG Institute of Technology and Applied Research</strong>, specializing in <strong>Artificial Intelligence and Data Science</strong>. 
-                            I am deeply passionate about leveraging technology to drive innovation and solve complex real-world challenges. 
-                            With hands-on experience in <strong>Python programming</strong>, <strong>data analysis</strong>, and <strong>modern web development</strong>, I continuously strive to enhance my technical expertise and contribute to impactful projects. 
-                            My focus is on building intelligent solutions that blend data, design, and development into seamless digital experiences.
-                        </p>
-                    </div>
-                    <div class="fade-in-up">
-                        <div class="w-full h-64 bg-gradient-to-br from-emerald-500 to-slate-700 rounded-lg flex items-center justify-center">
-                            <svg class="w-32 h-32 text-white opacity-30" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z"/>
-                                <path d="M12 7L6.5 9.5V15c0 2.5 2.5 4.5 5.5 4.5s5.5-2 5.5-4.5V9.5L12 7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
     <!-- My Projects Section -->
     <section id="my-projects" class="py-20 bg-slate-900">
