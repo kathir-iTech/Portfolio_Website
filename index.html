@@ -54,53 +54,48 @@
 <body class="bg-white text-gray-900">
 
          <!-- Navigation -->
-<nav class="">
-  <div class="container mx auto px 4">
+<!-- Navigation -->
+<nav class="bg-white shadow">
+  <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-4">
-      <!-- Brand with Logo -->
-      <a href="#">
+      
+      <!-- Brand Section -->
+      <a href="#" class="flex items-center space-x-2">
         <img src="kathir.png" alt="Kathir Logo" class="h-8 w-8 rounded-full border border-emerald-400 shadow-sm" />
         <span class="text-2xl font-bold brand-glow">KATHIR iTECH</span>
       </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-6">
+        <li><a href="#hero" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">Hero</a></li>
+        <li><a href="#about-me" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">About me</a></li>
+        <li><a href="#my-projects" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">My Projects</a></li>
+        <li><a href="#certifications" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">Certifications</a></li>
+        <li><a href="#badges" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">Badges</a></li>
+        <li><a href="#contact" class="nav-link text-gray-700 hover:text-emerald-400 font-semibold">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+        <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar1"></span>
+        <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar2"></span>
+        <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-gray-100 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
+      <ul class="py-4 px-4 space-y-2">
+        <li><a href="#hero" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Hero</a></li>
+        <li><a href="#about-me" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">About me</a></li>
+        <li><a href="#my-projects" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">My Projects</a></li>
+        <li><a href="#certifications" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Certifications</a></li>
+        <li><a href="#badges" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Badges</a></li>
+        <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Contact</a></li>
+      </ul>
     </div>
   </div>
 </nav>
-
-
-
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-8">
-  <li><a href="#hero" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Hero</a></li>
-  <li><a href="#about-me" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">About me</a></li>
-  <li><a href="#my-projects" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">My Projects</a></li>
-  <li><a href="#certifications" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Certifications</a></li>
-  <li><a href="#badges" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Badges</a></li>
-  <li><a href="#contact" class="nav-link text-gray-700 hover:text-emerald-400 transition-colors py-2 relative font-semibold">Contact</a></li>
-</ul>
-
-
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden flex flex-col space-y-1 p-2" id="mobile-menu-btn" aria-label="Toggle menu">
-          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar1"></span>
-          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar2"></span>
-          <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300" id="bar3"></span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden bg-gray-100 rounded-lg mt-2 shadow-lg overflow-hidden transition-all duration-300 max-h-0" id="mobile-menu">
-        <ul class="py-4 px-4 space-y-2">
-  <li><a href="#hero" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Hero</a></li>
-  <li><a href="#about-me" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">About me</a></li>
-  <li><a href="#my-projects" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">My Projects</a></li>
-  <li><a href="#certifications" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Certifications</a></li>
-  <li><a href="#badges" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Badges</a></li>
-  <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-emerald-400 font-semibold">Contact</a></li>
-</ul>
-
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen pt-24 flex items-center justify-center relative overflow-hidden hero-bg">
