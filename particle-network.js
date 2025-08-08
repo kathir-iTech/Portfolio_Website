@@ -1,87 +1,93 @@
-// particle-network.js
-(() => {
-  const container = document.querySelector('.particle-network');
-  const canvas = document.createElement('canvas');
-  container.appendChild(canvas);
-  const ctx = canvas.getContext('2d');
+<!-- Add this inside the <body> tag, preferably just after the opening tag -->
+<canvas id="swarm"></canvas>
 
+<!-- Add this script near the end of the <body> tag, before closing </body> -->
+<script>
+  const canvas = document.getElementById("swarm");
+  const ctx = canvas.getContext("2d");
   let width, height;
-  let particles = [];
-  const maxParticles = 65;
-  const maxDistance = 120;
-
-  function init() {
-    resize();
-    particles = [];
-    for (let i = 0; i < maxParticles; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: 2 + Math.random() * 2,
-      });
-    }
-    animate();
-  }
 
   function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   }
+  window.addEventListener("resize", resize);
+  resize();
 
-  window.addEventListener('resize', () => {
-    resize();
-  });
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(16, 185, 129, 0.7)';
-    ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
-    ctx.lineWidth = 1;
-
-    // Draw particles
-    for (const p of particles) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
-      ctx.fill();
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 1.5;
+      this.vy = (Math.random() - 0.5) * 1.5;
+      this.size = 3;
     }
-
-    // Draw lines for close particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const p1 = particles[i];
-        const p2 = particles[j];
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
+    update(mouse) {
+      if (mouse) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < maxDistance) {
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
+        if (dist < 150) {
+          const force = (150 - dist) / 150;
+          this.vx += (dx / dist) * force * 0.5;
+          this.vy += (dy / dist) * force * 0.5;
+        } else {
+          this.vx += (Math.random() - 0.5) * 0.1;
+          this.vy += (Math.random() - 0.5) * 0.1;
         }
       }
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0) { this.x = 0; this.vx *= -1; }
+      if (this.x > width) { this.x = width; this.vx *= -1; }
+      if (this.y < 0) { this.y = 0; this.vy *= -1; }
+      if (this.y > height) { this.y = height; this.vy *= -1; }
+
+      this.vx *= 0.95;
+      this.vy *= 0.95;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.9)';  // Accent green color matching your site (#10b981)
+      ctx.shadowColor = 'rgba(16, 185, 129, 0.9)';
+      ctx.shadowBlur = 12;
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
     }
   }
 
-  function update() {
-    for (const p of particles) {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > width) p.vx = -p.vx;
-      if (p.y < 0 || p.y > height) p.vy = -p.vy;
-    }
+  const particles = [];
+  for (let i = 0; i < 120; i++) {
+    particles.push(new Particle());
   }
+
+  let mouse = null;
+  window.addEventListener("mousemove", e => { mouse = { x: e.clientX, y: e.clientY }; });
+  window.addEventListener("mouseout", () => { mouse = null; });
 
   function animate() {
-    update();
-    draw();
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => { p.update(mouse); p.draw(); });
     requestAnimationFrame(animate);
   }
+  animate();
+</script>
 
-  init();
-})();
+<!-- Add this CSS in your main stylesheet or inside a <style> tag in your HTML head -->
+<style>
+  body, html {
+    margin: 0;
+    height: 100%;
+    background: #111827; /* Your site primary dark background */
+    overflow: hidden;
+  }
+  #swarm {
+    display: block;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;  /* Keeps background behind content */
+  }
+</style>
