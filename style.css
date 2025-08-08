@@ -1,45 +1,83 @@
+/* -----------------------------------
+   Base Styles and Typography
+------------------------------------- */
+
 body {
-  background: #ffffff;
-  color: #111827;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;               /* Keep white for rest of the site */
+  color: #111827;                   /* Dark text */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .hero-bg {
-  background: transparent;
+  background-color: #111827;        /* Dark background for hero section */
   position: relative;
   overflow: hidden;
 }
 
+/* -----------------------------------
+   Particle Canvas Background (#swarm)
+------------------------------------- */
 
+#swarm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;             /* Mouse clicks pass through */
+  z-index: -1;                      /* Behind all other content */
+  background-color: transparent;
+}
+
+/* -----------------------------------
+   Remove old particle network styles (if unused)
+------------------------------------- */
+
+/* 
 .particle-network {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
   z-index: 0;
   background-color: transparent;
 }
+*/
 
+/* -----------------------------------
+   Navigation Bar
+------------------------------------- */
 
 .navbar,
 .navbar.scrolled {
   background: #fff !important;
-  border-bottom: 1px solid rgba(100,100,100,0.12); /* subtle divider */
-  box-shadow: 0 2px 8px 0 rgba(120,130,140,0.07); /* gentle shadow for elevation */
+  border-bottom: 1px solid rgba(100, 100, 100, 0.12);
+  box-shadow: 0 2px 8px 0 rgba(120, 130, 140, 0.07);
   transition: background 0.3s, box-shadow 0.3s;
   z-index: 99;
 }
-.nav-link, .mobile-nav-link {
-  font-weight: 700;         /* makes menu text bold */
-  color: #1e293b;           /* near-black for maximum contrast */
+
+.nav-link,
+.mobile-nav-link {
+  font-weight: 700;
+  color: #1e293b;
   transition: color 0.3s;
 }
-.nav-link:hover, .mobile-nav-link:hover,
+
+.nav-link:hover,
+.mobile-nav-link:hover,
 .nav-link.active {
-  color: #10b981;           /* emerald for active and hover */
+  color: #10b981;
 }
 
+/* -----------------------------------
+   Text and Glow Effects
+------------------------------------- */
 
 .name-glow {
   color: #111827;
@@ -47,37 +85,72 @@ body {
   animation: none;
 }
 
-.certification-card, .project-card {
-  background: #f5f5f5;              /* Very light gray */
-  color: #18181b;                   /* Nearly black text */
-  box-shadow: 0 2px 8px 0 rgba(40,60,100,0.08);
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* -----------------------------------
+   Cards (Certifications, Projects)
+------------------------------------- */
+
+.certification-card,
+.project-card {
+  background: #f5f5f5;
+  color: #18181b;
+  box-shadow: 0 2px 8px 0 rgba(40, 60, 100, 0.08);
   border: 1px solid #e2e8f0;
 }
-/* For extra emphasis on FreeCodeCamp label: */
+
+/* Emphasis on FreeCodeCamp label */
 .project-card .tool-chip {
-  background: #e2ffe3;              /* Light green for FreeCodeCamp */
+  background: #e2ffe3;
   color: #089101;
   font-weight: 700;
 }
 
+/* -----------------------------------
+   Animations for Fade-in
+------------------------------------- */
 
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* -----------------------------------
+   Contact Section and Buttons
+------------------------------------- */
+
 .contact-btn,
 .contact-info,
 .contact-btn svg,
 .contact-info a {
-  color: #18181b !important;    /* Makes icons and names black */
-  fill: #18181b !important;     /* Ensures SVG icons are also black */
+  color: #18181b !important;
+  fill: #18181b !important;
   font-weight: 700;
 }
+
+/* -----------------------------------
+   Footer
+------------------------------------- */
 
 footer {
   background-color: #f9fafb;
@@ -86,7 +159,10 @@ footer {
   font-size: 0.875rem;
 }
 
-/* Floating Chat Button */
+/* -----------------------------------
+   Floating Chat Button and Chat Window
+------------------------------------- */
+
 #chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -97,11 +173,10 @@ footer {
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
 
-/* Chat Window */
 #chat-window {
   position: fixed;
   bottom: 80px;
@@ -110,14 +185,16 @@ footer {
   max-height: 400px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 1000;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
 #chat-header {
   background: #4f46e5;
@@ -134,6 +211,8 @@ footer {
   overflow-y: auto;
   font-size: 14px;
 }
+
+/* Chat Messages */
 
 .message {
   margin: 5px 0;
@@ -171,5 +250,9 @@ footer {
   cursor: pointer;
 }
 
+/* -----------------------------------
+   Miscellaneous / Utility Styles
+------------------------------------- */
 
 /* Add your cards, chips, buttons, and other misc. styles here using the same "gray", "emerald", and pastel color approach for a light, modern feel. */
+
