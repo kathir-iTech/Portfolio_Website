@@ -313,3 +313,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     console.log('Sections found:', Array.from(sections).map(s => s.id));
 });
+
+// Global variable to track mouse/touch position
+let mouse = { x: null, y: null, active: false };
+
+// Mouse movement on desktop
+canvas.addEventListener('mousemove', function(e) {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+  mouse.active = true;
+});
+
+// Mouse leaves canvas
+canvas.addEventListener('mouseleave', function() {
+  mouse.active = false;
+});
+
+// Touch events on mobile
+canvas.addEventListener('touchstart', function(e) {
+  if (e.touches.length === 1) {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+    mouse.active = true;
+  }
+});
+canvas.addEventListener('touchmove', function(e) {
+  if (e.touches.length === 1) {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+    mouse.active = true;
+  }
+});
+canvas.addEventListener('touchend', function() {
+  mouse.active = false;
+});
+
+
+if (mouse.active && mouse.x !== null && mouse.y !== null) {
+  for (const p of particles) {
+    const dx = p.x - mouse.x;
+    const dy = p.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < maxDistance) {
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.7)';
+      ctx.stroke();
+    }
+  }
+}
+
