@@ -31,15 +31,65 @@
     gtag('js', new Date());
     gtag('config', 'G-2HJN4EGQWB');
   </script>
+
+  <style>
+    /* Particle network background styles */
+    .particle-network {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      background-color: transparent;
+    }
+    
+    /* Make sections transparent to show particles behind */
+    #my-projects {
+      background: rgba(249, 250, 251, 0.85) !important;
+      backdrop-filter: blur(5px);
+    }
+    
+    #certifications {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(5px);
+    }
+    
+    #badges {
+      background: rgba(249, 250, 251, 0.85) !important;
+      backdrop-filter: blur(5px);
+    }
+    
+    /* Keep solid background for About Me and Contact sections */
+    #about-me {
+      background: rgba(255, 255, 255, 1) !important;
+      position: relative;
+      z-index: 10;
+    }
+    
+    #contact {
+      background: rgba(255, 255, 255, 1) !important;
+      position: relative;
+      z-index: 10;
+    }
+    
+    /* Ensure section positioning */
+    section {
+      position: relative;
+      z-index: 5;
+    }
+    
+    /* Navigation z-index */
+    nav {
+      z-index: 50;
+    }
+  </style>
 </head>
 
 <body class="bg-transparent text-gray-900">
   <!-- Particle Canvas Background -->
-  
-
-  <div class="particle-network"></div>
-  
-
+  <div class="particle-network" id="particle-network"></div>
 
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed w-full top-0 z-50">
@@ -126,7 +176,7 @@
   </section>
 
   <!-- My Projects Section -->
-  <section id="my-projects" class="py-20 bg-gray-50 relative z-10">
+  <section id="my-projects" class="py-20 relative z-10">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
@@ -154,7 +204,7 @@
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="py-20 bg-white relative z-10">
+  <section id="certifications" class="py-20 relative z-10">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
@@ -426,7 +476,7 @@
   </section>
 
   <!-- Badges Section -->
-  <section id="badges" class="py-20 bg-gray-50 relative z-10">
+  <section id="badges" class="py-20 relative z-10">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">Badges</h2>
@@ -738,10 +788,188 @@
     </div>
   </footer>
 
- 
+  <!-- Interactive Particle Background Script -->
+  <script>
+    (() => {
+      const container = document.getElementById('particle-network');
+      const canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+
+      let width, height;
+      const dpr = window.devicePixelRatio || 1;
+      const maxParticles = window.innerWidth < 600 ? 60 : 90;
+      const repulsionRadius = window.innerWidth < 600 ? 120 : 150;
+      const repulsionForce = 0.25;
+      const baseSpeed = 0.3;
+
+      let particles = [];
+      let pointer = { x: null, y: null, active: false };
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+
+      function initParticles() {
+        particles = [];
+        for (let i = 0; i < maxParticles; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * baseSpeed,
+            vy: (Math.random() - 0.5) * baseSpeed,
+            baseVx: (Math.random() - 0.5) * baseSpeed,
+            baseVy: (Math.random() - 0.5) * baseSpeed,
+            radius: 1.5 + Math.random() * 0.5,
+          });
+        }
+      }
+
+      function updateParticles() {
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Bounce off edges
+          if (p.x <= p.radius) {
+            p.x = p.radius;
+            p.vx = Math.abs(p.vx);
+            p.baseVx = Math.abs(p.baseVx);
+          }
+          if (p.x >= width - p.radius) {
+            p.x = width - p.radius;
+            p.vx = -Math.abs(p.vx);
+            p.baseVx = -Math.abs(p.baseVx);
+          }
+          if (p.y <= p.radius) {
+            p.y = p.radius;
+            p.vy = Math.abs(p.vy);
+            p.baseVy = Math.abs(p.baseVy);
+          }
+          if (p.y >= height - p.radius) {
+            p.y = height - p.radius;
+            p.vy = -Math.abs(p.vy);
+            p.baseVy = -Math.abs(p.baseVy);
+          }
+
+          // Attraction/repulsion from pointer
+          if (pointer.active && pointer.x !== null && pointer.y !== null) {
+            const dx = p.x - pointer.x;
+            const dy = p.y - pointer.y;
+            const distToPointer = Math.sqrt(dx * dx + dy * dy);
+
+            if (distToPointer < repulsionRadius && distToPointer > 0) {
+              const force = repulsionForce * (1 - distToPointer / repulsionRadius);
+              p.vx += (dx / distToPointer) * force;
+              p.vy += (dy / distToPointer) * force;
+              p.vx *= 0.9;
+              p.vy *= 0.9;
+            } else {
+              p.vx += (p.baseVx - p.vx) * 0.02;
+              p.vy += (p.baseVy - p.vy) * 0.02;
+            }
+          } else {
+            p.vx += (p.baseVx - p.vx) * 0.01;
+            p.vy += (p.baseVy - p.vy) * 0.01;
+          }
+
+          // Ensure minimum movement
+          const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+          if (speed < 0.05) {
+            p.vx = p.baseVx;
+            p.vy = p.baseVy;
+          }
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+          // Enhanced glow effect for attraction
+          let glowIntensity = 0.8;
+          if (pointer.active && pointer.x !== null && pointer.y !== null) {
+            const dx = p.x - pointer.x;
+            const dy = p.y - pointer.y;
+            const distToPointer = Math.sqrt(dx * dx + dy * dy);
+            if (distToPointer < repulsionRadius) {
+              glowIntensity = 1.2 + (1 - distToPointer / repulsionRadius) * 0.5;
+            }
+          }
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(16,185,129,${glowIntensity})`;
+          ctx.shadowColor = `rgba(16,185,129,${glowIntensity * 0.8})`;
+          ctx.shadowBlur = 8 * glowIntensity;
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        });
+      }
+
+      // Mouse and touch event handlers
+      document.addEventListener('mousemove', e => {
+        pointer.x = e.clientX;
+        pointer.y = e.clientY;
+        pointer.active = true;
+      });
+
+      document.addEventListener('mouseleave', () => {
+        pointer.active = false;
+        pointer.x = null;
+        pointer.y = null;
+      });
+
+      document.addEventListener('touchstart', e => {
+        if (e.touches.length === 1) {
+          pointer.x = e.touches[0].clientX;
+          pointer.y = e.touches.clientY;
+          pointer.active = true;
+        }
+      }, { passive: true });
+
+      document.addEventListener('touchmove', e => {
+        if (e.touches.length === 1) {
+          pointer.x = e.touches.clientX;
+          pointer.y = e.touches.clientY;
+          pointer.active = true;
+        }
+      }, { passive: true });
+
+      document.addEventListener('touchend', () => {
+        pointer.active = false;
+        pointer.x = null;
+        pointer.y = null;
+      });
+
+      window.addEventListener('resize', () => {
+        resize();
+        initParticles();
+      });
+
+      function animate() {
+        updateParticles();
+        draw();
+        requestAnimationFrame(animate);
+      }
+
+      function start() {
+        resize();
+        initParticles();
+        animate();
+      }
+
+      start();
+    })();
+  </script>
+
   <!-- Main JavaScript -->
   <script src="app.js"></script>
-  <script src="particle-network.js"></script>
 </body>
 </html>
-
