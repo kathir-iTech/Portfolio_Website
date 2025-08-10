@@ -14,11 +14,7 @@
   <a href="mailto:kathir.3447@gmail.com">
     <img src="https://img.shields.io/badge/Email-Kathirvel-lightgrey?logo=gmail" alt="Email" />
   </a>
-</p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=700&color=10b981&background=FFFFFF00&center=true&vCenter=true&multiline=true&width=700&lines=AI+%26+Data+Science+Student+%F0%9F%A4%96;Building+intelligent+solutions;Passionate+about+real+world+problem+solving+%F0%9F%9A%80;Web+%7C+Python+%7C+Data+Analytics+%7C+Visualization"
-       alt="Typing Animation" />
 </p>
 
 ---
