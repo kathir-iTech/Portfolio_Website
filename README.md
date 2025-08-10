@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="75" alt="Sparkle Animation"/>
   <br />
-  Kathirvel R | AI & DS Portfolio
+  Kathirvel R | Work_Folio
 </h1>
 
 <p align="center">
