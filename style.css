@@ -17,10 +17,11 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: none; /* lets clicks pass through */
+  z-index: 1; /* behind your main page content */
   background-color: transparent;
 }
+
 
 
 .hero-bg {
