@@ -81,17 +81,7 @@ Built using **HTML5, Tailwind CSS, JavaScript**, and featuring a glowing particl
 
 ---
 
-## 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=kathir-iTech&show_icons=true&theme=tokyonight&hide_title=true" alt="GitHub Stats" />
-  <br />
-  <img src="https://streak-stats.demolab.com?user=kathir-iTech&theme=algolia&hide_border=true" alt="GitHub Streak Stats" />
-  <br />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kathir-iTech&theme=react-dark" alt="GitHub Activity Graph" />
-</p>
-
----
 
 ## 🙏 Acknowledgements
 
