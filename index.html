@@ -31,6 +31,7 @@
     gtag('js', new Date());
     gtag('config', 'G-2HJN4EGQWB');
   </script>
+
   <style>
   .name-glow {
     text-shadow: 
@@ -40,6 +41,62 @@
   }
 </style>
 
+  <!-- Advanced Analytics Tracking -->
+  <script>
+  function trackButtonClick(buttonName) {
+    gtag('event', 'button_click', {
+      'button_name': buttonName,
+      'event_category': 'engagement',
+      'event_label': buttonName + '_btn',
+      'page_location': window.location.href
+    });
+  }
+
+  function trackFormSubmission(formName) {
+    gtag('event', 'form_submit', {
+      'form_name': formName,
+      'event_category': 'form',
+      'event_label': formName + '_submit',
+      'page_location': window.location.href
+    });
+  }
+
+  function trackFileDownload(fileName) {
+    gtag('event', 'file_download', {
+      'file_name': fileName,
+      'event_category': 'download',
+      'event_label': fileName,
+      'page_location': window.location.href
+    });
+  }
+
+  function trackExternalClick(label) {
+    gtag('event', 'external_click', {
+      'event_category': 'outbound',
+      'event_label': label,
+      'page_location': window.location.href
+    });
+  }
+
+  (function() {
+    let depths = [25, 50, 75, 100];
+    let triggered = {};
+    window.addEventListener('scroll', () => {
+      const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      depths.forEach(depth => {
+        if (scrollPercent >= depth && !triggered[depth]) {
+          triggered[depth] = true;
+          gtag('event', 'scroll_depth', {
+            'event_category': 'engagement',
+            'event_label': depth + '%',
+            'scroll_depth': depth,
+            'page_location': window.location.href
+          });
+        }
+      });
+    });
+  })();
+  </script>
 </head>
 
 <body class="bg-transparent text-gray-900">
